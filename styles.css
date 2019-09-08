@@ -1,0 +1,128 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: #3a3a3a;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.6rem;
+	height: 100vh;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.05));
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	background-position:0% 0%;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+	overflow: hidden;
+}
+
+.main {
+	flex-grow: 1;
+	overflow: hidden;
+	padding: 2rem;
+}
+
+.carousel {
+	height: 600px;
+	overflow: hidden;
+	padding: 0 4.5rem;
+	position: relative;
+}
+
+.carousel-track {
+	display: flex;
+	height: 100%;
+	overflow: hidden;
+}
+
+.nav-prev,
+.nav-next {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	user-select: none;
+	font-size: 2.4rem;
+}
+
+.nav-prev {
+	left: 0;
+}
+
+.nav-next {
+	right: 0;
+}
+
+.nav i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%)
+}
+
+.carousel-track {
+	position: relative;
+}
+
+.carousel-slide {
+	min-width: 100%;
+	/* display: none;
+	position: relative; */
+	position: absolute;
+	top: 100%;
+}
+
+.carousel-slide.active {
+	top: 0;
+}
+
+.carousel-slide img {
+	width: 100%;
+}
+
+.caption {
+	position: absolute;
+	bottom: 2rem;
+	left: 2rem;
+	font-size: 2.4rem;
+	color: #fff;
+}
+
+.dotsNav {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0;
+}
+
+.dotNav {
+	display: inline-block;
+	margin: 0 .5rem;
+	width: 40px;
+	height: 6px;
+	background-color: #3a3a3a;
+	cursor: pointer;
+}
+
+.dotNav.active {
+	background-color: seagreen;
+}
+
+
+/* Slide transitions */
+.fade .carousel-slide {
+	transition: all .5s ease-in;
+	transform: scale(0);
+	transform-origin: center;
+	opacity: 0;
+}
+
+.fade .carousel-slide.active {
+	transform: scale(1);
+	opacity: 1;
+}
